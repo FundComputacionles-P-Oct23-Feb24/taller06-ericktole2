@@ -1,0 +1,90 @@
+Inicio
+nombre, x(10) [{a-z},{A-Z}]
+posición, x(10) [{a-z},{A-Z}]
+edad, i[o-n]
+estatura, d[o-n]
+promedioEdad, d[o-n] 
+promedioE, d[o-n]
+cadenaF, x(200) [{1-9},{az},[{a-z}{A-Z}]
+bondera, 1<-- true
+opción, x (15) [{az}]
+Mientras bandera <== true entonces
+      <<"Ingrese el nombre jugador"
+      >>nombre
+      <<"Ingrese posición del juego del jugador
+      >> posición 
+      <<" Ingrese la edad del jugador"
+      >> edad 
+      <<"Ingrese estatura del jugador"  
+      >> estatura
+      cadenaF <-- cadenaF + nombre +"posicion" + posision + "edad"+ edad+ "esatura"+estatura
+      <<Desea ingresar mas jugadores"Digiten n para terminar "
+      >> opcion 
+      Si opcion es == "n"entonces 
+      bandera <-- false 
+Fin Mientras 
+<<cadenaF
+Fin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Inicio
+nombre, x(100)[{a-z},{A-Z},{BS}]
+posicion, x(100)[{a-z},{A-Z},{BS}]
+reporte, x(100)[{a-z},{A-Z},{BS}]
+reporte <--"Listado de jugadores\n"
+respuesta, x(100)[{a-z},{A-Z},{BS}]
+contador, i[0-n]
+contador <--1
+edad, d[0-n]
+sumaedades, d[0-n]
+sumaestaturas, d[0-n]
+estaturas <--0
+estatura, d[0-n]
+promedioedad; d[0-n]
+promedioedad <--0
+promedioestatura, d [0-n]
+promedioestatura <--0
+terminar, x(10)[{a-z}]
+terminar <--Verdadero
+Mientras terminar == Verdadero entonces
+ << "Ingrese información del jugador #" + contador
+ << "Nombre del jugador"
+ >> nombre
+ << "Posicion en el campo de juego"
+ >> posicion
+ << "Edad"
+ >> edad
+ sumaedades <--edad + sumaedades
+ << "Estatura"
+ >> estatura
+ sumaestaturas <--estatura + sumaestaturas
+ reporte <-- reporte + contador + "." + nombre + "-" + posicion + "-" + ", edad " + edad + ", estatura " + estatura + "\n"
+ << "¿Desea ingresar otro jugador?(s/n)"
+ >> respuesta
+  Si respuesta == "n" entonces
+   terminar <-- false
+  Fin Si
+ contador <-- contador + 1
+ promedioedad <-- sumaedades/contador
+ promedioestatura <-- sumaestatura/contador
+Fin Mientras
+reporte <-- reporte + "Promedio de Edades: " + promedioedad + "\n Promedio de Estaturas: " + promedioestatura
+<< reporte
+Fin

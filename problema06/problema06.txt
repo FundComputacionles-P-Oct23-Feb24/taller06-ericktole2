@@ -1,0 +1,29 @@
+Inicio
+nombreC, x(100)[{a-z},{A-Z},{BS}]
+cliente, x(100)[{a-z},{A-Z},{BS}]
+cliente <--"Listado de clientela:"
+contador, i[0-n]
+contador <--1
+tipoC, i[0-n]
+costopc, d [0-n]
+descuento, d[0-n]
+Mientras contador <=-7 entonces
+    << "Nombre del comprador" + contador
+    >> nombreC
+    << "Ingrese el costo del pc"
+    >> costo
+    << "Ingrese el tipo de cliente "
+    >> tipoC
+  	Si tipocliente == 1	
+	  descuento <-- costo * 0.10
+   	  costo <-- costo - descuento
+  	Fin Si
+ 	   Si tipo cliente == 2 
+    	     descuento <-- costo * 0.20 
+              costo <-- costo - descuento
+           Fin Si
+    cliente <-- cliente + "Cliente #" + contador + " tipo " + tipoC+ "Compra de computadora a un costo de" + costo
+    contador <-- contador + 1
+Fin Mientras
+<<cliente
+Fin

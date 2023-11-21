@@ -1,0 +1,10 @@
+Inicio 
+acumulador,i[0,n]
+controlador,i[0-n] 
+acumulador<-- 10
+controlador <-- 5 
+Mientras acumulador <=20 entonces
+    <<controlador <-- controlador +5
+    controlador <-- acumulador + 2
+Fin Mientras 
+Fin 
